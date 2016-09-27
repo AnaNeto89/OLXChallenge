@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var olxManager:OLXManager = OLXManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.olxManager.getData()
+        
     }
 
     override func didReceiveMemoryWarning() {
