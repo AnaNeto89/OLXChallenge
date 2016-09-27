@@ -23,8 +23,10 @@ public class OLXAPIRepository: NSObject {
             .validate(contentType: ["application/json"])
             .responseJSON { response in
                 // response handling code
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                if let JSON = response.data {
+                    if let dataString:String = String(data: JSON, encoding: NSUTF8StringEncoding) {
+                        print("JSON: \(dataString)")
+                    }
                 }
                 
                 
