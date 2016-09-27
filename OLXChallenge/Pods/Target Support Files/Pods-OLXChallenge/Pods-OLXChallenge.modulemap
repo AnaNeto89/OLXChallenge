@@ -1,0 +1,6 @@
+framework module Pods_OLXChallenge {
+  umbrella header "Pods-OLXChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
