@@ -4,5 +4,9 @@
 <dict>
 	<key>API_URL</key>
 	<string>https://www.olx.pt/i2/ads/?json=1&amp;search%5bcategory_id%5d=25</string>
+	<key>IMAGE_URL_BASE</key>
+	<string>https://img.olx.pt/images_olxpt/</string>
+	<key>IMAGE_URL_ITEM</key>
+	<string>%@_%@_.jpg</string>
 </dict>
 </plist>
