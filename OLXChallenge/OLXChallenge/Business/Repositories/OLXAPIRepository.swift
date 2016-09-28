@@ -25,6 +25,9 @@ public class OLXAPIRepository: NSObject {
     }
     
     public func olxAPIRequest(url:String){
+        
+        print(url)
+        
         Alamofire.request(.GET, url)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])

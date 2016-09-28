@@ -12,8 +12,10 @@ import RealmSwift
 class ViewController: UIViewController {
 
     private var olxManager:OLXManager = OLXManager.sharedInstance
+    private var isLoadingTableView = true
     private var page:Int = 0
     private var data:List<Ad>?
+    private var nextPageURL:String?
     
     @IBOutlet var loadingCircle: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
@@ -25,7 +27,9 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         runScreenConfigurations()
+        apiCall()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,20 +44,29 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         self.loadingCircle.startAnimating()
     }
+    
     private func apiCall(){
-        self.olxManager.getData()
+        self.olxManager.getData(nextPageURL)
     }
 }
 
 extension ViewController:OLXManagerProtocol {
+    
     func returnResponse(response: Response) {
         
-        self.data = response.ads
+        if self.data == nil {
+            self.data = List<Ad>()
+        }
+        self.data!.appendContentsOf(response.ads)
         self.page = response.page
+        self.nextPageURL = response.nextPageURL
         
         self.loadingCircle.stopAnimating()
+        
         UIView.animateWithDuration(0.3, animations: {
             self.tableView.alpha = 1
+            }, completion: { bool in
+                self.tableView.reloadData()
         })
     }
 }
@@ -74,6 +87,12 @@ extension ViewController:UITableViewDelegate {
         cell.adTitleLabel.text = ad.title
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row+1 == data?.count {
+            apiCall()
+        }
     }
 }
 
