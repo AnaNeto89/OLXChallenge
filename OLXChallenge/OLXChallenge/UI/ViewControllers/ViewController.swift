@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SDWebImage
 
 class ViewController: UIViewController {
 
@@ -76,11 +77,14 @@ extension ViewController:UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:MainTableViewCell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell", forIndexPath: indexPath) as! MainTableViewCell
         let ad = data![indexPath.row]
+
+        if let imgURL = ad.getImageURL(0) {
+            cell.adImageView.sd_setImageWithURL(NSURL(string: imgURL), placeholderImage: UIImage(named: "imagePlaceholder"))
+        }
+        else {
+            cell.adImageView.image = UIImage(named: "imagePlaceholder")
+        }
         
-//        @IBOutlet var adImageView: UIImageView!
-//        @IBOutlet var priceLabel: UILabel!
-//        @IBOutlet var adLocationLabel: UILabel!
-//        @IBOutlet var adTitleLabel: UILabel!
         
         cell.priceLabel.text = ad.price
         cell.adLocationLabel.text = ad.locationText

@@ -36,6 +36,21 @@ public class Ad: Object {
         return "adId"
     }
     
+    func getImageURL(index:Int)->String? {
+        if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist") {
+            if let configDict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
+                if let imageBaseURL:String = configDict["IMAGE_URL_BASE"] as? String {
+                    if photos.count > 0 {
+                        if let photo:Photo = photos[index] {
+                            return imageBaseURL + "\(photo.key)_\(photo.slot)_.jpg"
+                        }
+                    }
+                }
+            }
+        }
+        return nil
+    }
+    
     static func parseFromJSON(data:JSON)->Ad {
         
         let newAd = Ad()
