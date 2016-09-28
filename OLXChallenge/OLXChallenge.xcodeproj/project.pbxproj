@@ -17,9 +17,8 @@
 		A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B46A1D9ACE4800C57740 /* OLXManager.swift */; };
 		A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A125B46C1D9AD1EA00C57740 /* Config.plist */; };
 		A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849261D9BF31A0026A8F8 /* Ad.swift */; };
-		A1F849291D9BF6960026A8F8 /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849281D9BF6960026A8F8 /* Vendor.swift */; };
-		A1F8492B1D9BF7310026A8F8 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492A1D9BF7310026A8F8 /* Map.swift */; };
 		A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492C1D9BF8420026A8F8 /* Photo.swift */; };
+		A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492E1D9C0DBD0026A8F8 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +36,8 @@
 		A125B46A1D9ACE4800C57740 /* OLXManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXManager.swift; sourceTree = "<group>"; };
 		A125B46C1D9AD1EA00C57740 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		A1F849261D9BF31A0026A8F8 /* Ad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
-		A1F849281D9BF6960026A8F8 /* Vendor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
-		A1F8492A1D9BF7310026A8F8 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		A1F8492C1D9BF8420026A8F8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A1F8492E1D9C0DBD0026A8F8 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				A1F849261D9BF31A0026A8F8 /* Ad.swift */,
-				A1F849281D9BF6960026A8F8 /* Vendor.swift */,
-				A1F8492A1D9BF7310026A8F8 /* Map.swift */,
 				A1F8492C1D9BF8420026A8F8 /* Photo.swift */,
+				A1F8492E1D9C0DBD0026A8F8 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,10 +266,9 @@
 				A125B4551D9AC42600C57740 /* ViewController.swift in Sources */,
 				A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */,
 				A125B4531D9AC42600C57740 /* AppDelegate.swift in Sources */,
-				A1F849291D9BF6960026A8F8 /* Vendor.swift in Sources */,
+				A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */,
 				A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */,
 				A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */,
-				A1F8492B1D9BF7310026A8F8 /* Map.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

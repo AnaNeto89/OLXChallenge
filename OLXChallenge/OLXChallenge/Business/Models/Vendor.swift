@@ -8,13 +8,25 @@
 
 import Foundation
 import RealmSwift
+import SwiftyJSON
 
 class Vendor: Object {
     
-    dynamic var venderName:String = ""
     dynamic var vendorId:String = ""
+    dynamic var vendorName:String = ""
     dynamic var vendorAdsURL:String = ""
-    dynamic var map:Map?
+    
+    override static func primaryKey() -> String? {
+        return "vendorId"
+    }
+    
+    static func parseFromJSON(data:JSON)->Vendor {
+    
+        var vendor:Vendor = Vendor()
+        
+        return vendor
+    }
+    
 // Specify properties to ignore (Realm won't persist these)
     
 //  override static func ignoredProperties() -> [String] {

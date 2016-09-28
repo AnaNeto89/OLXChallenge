@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 public class OLXAPIRepository: NSObject {
     
@@ -25,8 +26,16 @@ public class OLXAPIRepository: NSObject {
             .responseJSON { response in
                 // response handling code
                 if let data = response.data {
-                    let json = JSON(data: data)
-                    
+                    if let json:JSON = JSON(data: data) {
+                        let response = Response.parseFromJSON(json)
+                        let realm = try! Realm()
+                        
+                        try! realm.write {
+                            realm.add(response, update: true)
+                        }
+                        
+                        print(realm.objects(Photo.self))
+                    }
                 }
             }
     }
