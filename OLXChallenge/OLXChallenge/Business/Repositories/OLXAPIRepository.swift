@@ -8,11 +8,12 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 public class OLXAPIRepository: NSObject {
     
     public static let sharedInstance = OLXAPIRepository()
-
+    
     override init() {
         super.init()
     }
@@ -23,14 +24,10 @@ public class OLXAPIRepository: NSObject {
             .validate(contentType: ["application/json"])
             .responseJSON { response in
                 // response handling code
-                if let JSON = response.data {
-                    if let dataString:String = String(data: JSON, encoding: NSUTF8StringEncoding) {
-                        print("JSON: \(dataString)")
-                    }
+                if let data = response.data {
+                    let json = JSON(data: data)
+                    
                 }
-                
-                
-        }
+            }
     }
-    
 }
