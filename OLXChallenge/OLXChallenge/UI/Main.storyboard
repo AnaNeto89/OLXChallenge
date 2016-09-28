@@ -97,6 +97,7 @@
                     <navigationItem key="navigationItem" id="cOH-5E-UFx"/>
                     <connections>
                         <outlet property="loadingCircle" destination="Qe4-yT-xfV" id="Ntz-CJ-bcv"/>
+                        <outlet property="tableView" destination="sTY-vi-3AH" id="423-0n-0gG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

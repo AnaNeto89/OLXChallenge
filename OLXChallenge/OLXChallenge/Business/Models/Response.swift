@@ -13,6 +13,7 @@ import SwiftyJSON
 public class Response: Object {
     
     dynamic var page:Int = 0
+    dynamic var totalAds:Int = 0
     dynamic var totalPages:Int = 0
     dynamic var nextPageURL:String = ""
     var ads:List<Ad> = List<Ad>()
@@ -26,6 +27,10 @@ public class Response: Object {
         let newResponse = Response()
         if let page = data["page"].int {
             newResponse.page = page
+        }
+        
+        if let totalAds = data["total_ads"].int {
+            newResponse.totalAds = totalAds
         }
         
         if let totalPage = data["total_pages"].int {

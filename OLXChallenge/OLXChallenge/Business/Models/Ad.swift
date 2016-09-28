@@ -13,16 +13,20 @@ import Realm
 
 public class Ad: Object {
     
+    //details
     dynamic var adId:String?
     dynamic var url:String?
     dynamic var title:String?
     dynamic var descriptionText:String?
     dynamic var price:String?
     
+    //location
+    dynamic var locationText:String?
     dynamic var latitude:String?
     dynamic var longitude:String?
     dynamic var zoom:String?
     
+    //vendor
     dynamic var vendorId:String?
     dynamic var vendorName:String?
     
@@ -41,6 +45,7 @@ public class Ad: Object {
         newAd.descriptionText = data["description"].string
         newAd.price = data["list_label"].string
         
+        newAd.locationText = data["city_label"].string
         newAd.latitude = data["map_lat"].string
         newAd.longitude = data["map_lon"].string
         newAd.zoom = data["map_zoom"].string

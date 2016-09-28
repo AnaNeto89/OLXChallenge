@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0803DE0EAA318996A1B36656 /* Pods_OLXChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047DFD1EDC521DBFD33A829E /* Pods_OLXChallenge.framework */; };
 		A125B45A1D9AC42600C57740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A125B4591D9AC42600C57740 /* Assets.xcassets */; };
-		A125B45D1D9AC42600C57740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A125B45B1D9AC42600C57740 /* LaunchScreen.storyboard */; };
 		A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B4681D9AC9F700C57740 /* OLXAPIRepository.swift */; };
 		A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B46A1D9ACE4800C57740 /* OLXManager.swift */; };
 		A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A125B46C1D9AD1EA00C57740 /* Config.plist */; };
@@ -19,6 +18,8 @@
 		A1F849361D9C28E80026A8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F849331D9C28E80026A8F8 /* Main.storyboard */; };
 		A1F849371D9C28E80026A8F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849351D9C28E80026A8F8 /* ViewController.swift */; };
 		A1F849391D9C29160026A8F8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849381D9C29160026A8F8 /* MainTableViewCell.swift */; };
+		A1F8493A1D9C2DDA0026A8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A125B45B1D9AC42600C57740 /* LaunchScreen.storyboard */; };
+		A1F8811C1D9C570800B84C49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8811B1D9C570800B84C49 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A1F849331D9C28E80026A8F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1F849351D9C28E80026A8F8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A1F849381D9C29160026A8F8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		A1F8811B1D9C570800B84C49 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		A125B4511D9AC42600C57740 /* OLXChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				A1F8811B1D9C570800B84C49 /* AppDelegate.swift */,
 				A1F849311D9C28E80026A8F8 /* UI */,
 				A125B4651D9AC9E100C57740 /* Business */,
 				A125B4591D9AC42600C57740 /* Assets.xcassets */,
@@ -225,7 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */,
-				A125B45D1D9AC42600C57740 /* LaunchScreen.storyboard in Resources */,
+				A1F8493A1D9C2DDA0026A8F8 /* LaunchScreen.storyboard in Resources */,
 				A125B45A1D9AC42600C57740 /* Assets.xcassets in Resources */,
 				A1F849361D9C28E80026A8F8 /* Main.storyboard in Resources */,
 			);
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1F8811C1D9C570800B84C49 /* AppDelegate.swift in Sources */,
 				A1F849371D9C28E80026A8F8 /* ViewController.swift in Sources */,
 				A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */,
 				A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */,
