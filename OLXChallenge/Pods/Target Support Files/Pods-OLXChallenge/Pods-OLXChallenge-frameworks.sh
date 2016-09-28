@@ -87,11 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-OLXChallenge/Alamofire.framework"
   install_framework "Pods-OLXChallenge/Realm.framework"
   install_framework "Pods-OLXChallenge/RealmSwift.framework"
+  install_framework "Pods-OLXChallenge/SDWebImage.framework"
   install_framework "Pods-OLXChallenge/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-OLXChallenge/Alamofire.framework"
   install_framework "Pods-OLXChallenge/Realm.framework"
   install_framework "Pods-OLXChallenge/RealmSwift.framework"
+  install_framework "Pods-OLXChallenge/SDWebImage.framework"
   install_framework "Pods-OLXChallenge/SwiftyJSON.framework"
 fi
