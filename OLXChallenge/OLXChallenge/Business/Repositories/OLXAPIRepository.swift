@@ -9,11 +9,16 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import RealmSwift
+
+
+public protocol OLXAPIRepositoryProtocol {
+    func returnApiResponse(response:Response)
+}
 
 public class OLXAPIRepository: NSObject {
     
     public static let sharedInstance = OLXAPIRepository()
+    public var delegate:OLXAPIRepositoryProtocol?
     
     override init() {
         super.init()
@@ -28,13 +33,7 @@ public class OLXAPIRepository: NSObject {
                 if let data = response.data {
                     if let json:JSON = JSON(data: data) {
                         let response = Response.parseFromJSON(json)
-                        let realm = try! Realm()
-                        
-                        try! realm.write {
-                            realm.add(response, update: true)
-                        }
-                        
-                        print(realm.objects(Photo.self))
+                        self.delegate?.returnApiResponse(response)
                     }
                 }
             }

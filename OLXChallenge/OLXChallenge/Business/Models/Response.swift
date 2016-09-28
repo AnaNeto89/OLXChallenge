@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 import SwiftyJSON
 
-class Response: Object {
+public class Response: Object {
     
     dynamic var page:Int = 0
     dynamic var totalPages:Int = 0
     dynamic var nextPageURL:String = ""
     var ads:List<Ad> = List<Ad>()
     
-    override static func primaryKey() -> String? {
+    override public static func primaryKey() -> String? {
         return "page"
     }
     

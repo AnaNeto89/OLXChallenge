@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     private var olxManager:OLXManager = OLXManager.sharedInstance
     
+    @IBOutlet var loadingCircle: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.olxManager.delegate = self
+        self.loadingCircle.startAnimating()
         self.olxManager.getData()
         
     }
@@ -28,7 +32,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
-
+extension ViewController:OLXManagerProtocol {
+    func returnResponse(response: Response) {
+        self.loadingCircle.stopAnimating()
+    }
 }
 

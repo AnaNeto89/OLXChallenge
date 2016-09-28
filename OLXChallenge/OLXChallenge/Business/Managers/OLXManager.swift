@@ -8,15 +8,21 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+
+public protocol OLXManagerProtocol {
+    func returnResponse(response:Response)
+}
 
 public class OLXManager: NSObject {
     
     static let sharedInstance = OLXManager()
-    
+    public var delegate:OLXManagerProtocol?
     private var olxAPIRepository:OLXAPIRepository = OLXAPIRepository.sharedInstance
     
     public override init(){
         super.init()
+        self.olxAPIRepository.delegate = self
     }
     
     public func getData(){
@@ -28,5 +34,19 @@ public class OLXManager: NSObject {
             }
         }
     }
-    
+}
+
+extension OLXManager: OLXAPIRepositoryProtocol {
+    public func returnApiResponse(response: Response) {
+        
+        //save data in realm db
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(response, update: true)
+        }
+        
+        self.delegate?.returnResponse(response)
+
+    }
 }

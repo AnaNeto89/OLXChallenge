@@ -10,14 +10,14 @@ import Foundation
 import RealmSwift
 import SwiftyJSON
 
-class Photo: Object {
+public class Photo: Object {
     
     dynamic var key:Int  = 0
     dynamic var slot:Int = 0
     dynamic var width: Int = 0
     dynamic var height: Int = 0
 
-    override static func primaryKey() -> String? {
+    override public static func primaryKey() -> String? {
         return "key"
     }
     

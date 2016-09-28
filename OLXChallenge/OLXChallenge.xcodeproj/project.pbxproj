@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0803DE0EAA318996A1B36656 /* Pods_OLXChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047DFD1EDC521DBFD33A829E /* Pods_OLXChallenge.framework */; };
-		A125B4531D9AC42600C57740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B4521D9AC42600C57740 /* AppDelegate.swift */; };
-		A125B4551D9AC42600C57740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B4541D9AC42600C57740 /* ViewController.swift */; };
-		A125B4581D9AC42600C57740 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A125B4561D9AC42600C57740 /* Main.storyboard */; };
 		A125B45A1D9AC42600C57740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A125B4591D9AC42600C57740 /* Assets.xcassets */; };
 		A125B45D1D9AC42600C57740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A125B45B1D9AC42600C57740 /* LaunchScreen.storyboard */; };
 		A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B4681D9AC9F700C57740 /* OLXAPIRepository.swift */; };
@@ -19,6 +16,9 @@
 		A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849261D9BF31A0026A8F8 /* Ad.swift */; };
 		A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492C1D9BF8420026A8F8 /* Photo.swift */; };
 		A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492E1D9C0DBD0026A8F8 /* Response.swift */; };
+		A1F849361D9C28E80026A8F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1F849331D9C28E80026A8F8 /* Main.storyboard */; };
+		A1F849371D9C28E80026A8F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849351D9C28E80026A8F8 /* ViewController.swift */; };
+		A1F849391D9C29160026A8F8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849381D9C29160026A8F8 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +26,6 @@
 		41BB11F2DABC105DD0B6210E /* Pods-OLXChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OLXChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OLXChallenge/Pods-OLXChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		94EF20BF1A8E1F4A63FDE2EA /* Pods-OLXChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OLXChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-OLXChallenge/Pods-OLXChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		A125B44F1D9AC42600C57740 /* OLXChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OLXChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A125B4521D9AC42600C57740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A125B4541D9AC42600C57740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A125B4571D9AC42600C57740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A125B4591D9AC42600C57740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A125B45C1D9AC42600C57740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A125B45E1D9AC42600C57740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,6 +35,9 @@
 		A1F849261D9BF31A0026A8F8 /* Ad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		A1F8492C1D9BF8420026A8F8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A1F8492E1D9C0DBD0026A8F8 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A1F849331D9C28E80026A8F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A1F849351D9C28E80026A8F8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1F849381D9C29160026A8F8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +91,8 @@
 		A125B4511D9AC42600C57740 /* OLXChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				A1F849311D9C28E80026A8F8 /* UI */,
 				A125B4651D9AC9E100C57740 /* Business */,
-				A125B4521D9AC42600C57740 /* AppDelegate.swift */,
-				A125B4541D9AC42600C57740 /* ViewController.swift */,
-				A125B4561D9AC42600C57740 /* Main.storyboard */,
 				A125B4591D9AC42600C57740 /* Assets.xcassets */,
 				A125B45B1D9AC42600C57740 /* LaunchScreen.storyboard */,
 				A125B45E1D9AC42600C57740 /* Info.plist */,
@@ -136,6 +134,32 @@
 				A1F8492E1D9C0DBD0026A8F8 /* Response.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A1F849311D9C28E80026A8F8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A1F849321D9C28E80026A8F8 /* Cells */,
+				A1F849331D9C28E80026A8F8 /* Main.storyboard */,
+				A1F849341D9C28E80026A8F8 /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A1F849321D9C28E80026A8F8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A1F849381D9C29160026A8F8 /* MainTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A1F849341D9C28E80026A8F8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A1F849351D9C28E80026A8F8 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +227,7 @@
 				A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */,
 				A125B45D1D9AC42600C57740 /* LaunchScreen.storyboard in Resources */,
 				A125B45A1D9AC42600C57740 /* Assets.xcassets in Resources */,
-				A125B4581D9AC42600C57740 /* Main.storyboard in Resources */,
+				A1F849361D9C28E80026A8F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1F849371D9C28E80026A8F8 /* ViewController.swift in Sources */,
 				A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */,
-				A125B4551D9AC42600C57740 /* ViewController.swift in Sources */,
 				A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */,
-				A125B4531D9AC42600C57740 /* AppDelegate.swift in Sources */,
+				A1F849391D9C29160026A8F8 /* MainTableViewCell.swift in Sources */,
 				A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */,
 				A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */,
 				A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */,
@@ -275,14 +299,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A125B4561D9AC42600C57740 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A125B4571D9AC42600C57740 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A125B45B1D9AC42600C57740 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

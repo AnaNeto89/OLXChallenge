@@ -11,7 +11,7 @@ import RealmSwift
 import SwiftyJSON
 import Realm
 
-class Ad: Object {
+public class Ad: Object {
     
     dynamic var adId:String?
     dynamic var url:String?
@@ -28,7 +28,7 @@ class Ad: Object {
     
     var photos:List<Photo> = List<Photo>()
     
-    override static func primaryKey() -> String? {
+    override public static func primaryKey() -> String? {
         return "adId"
     }
     
