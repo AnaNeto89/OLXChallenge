@@ -19,6 +19,7 @@ public class MainTableViewCell: UITableViewCell {
     @IBOutlet var adLocationLabel: UILabel!
     @IBOutlet var adTitleLabel: UILabel!
     @IBOutlet var shareButton: UIButton!
+    @IBOutlet var creationLabel: UILabel!
     
     public var adId:String?
     public var delegate:MainTableViewCellProtocol?

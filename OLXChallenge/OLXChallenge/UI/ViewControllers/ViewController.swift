@@ -110,6 +110,7 @@ extension ViewController:UITableViewDelegate {
         cell.priceLabel.text = ad.price
         cell.adLocationLabel.text = ad.locationText
         cell.adTitleLabel.text = ad.title
+        cell.creationLabel.text = ad.creationDate
         
         cell.contentView.layoutIfNeeded()
         

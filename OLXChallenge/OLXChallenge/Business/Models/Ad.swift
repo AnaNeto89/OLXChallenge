@@ -19,6 +19,7 @@ public class Ad: Object {
     dynamic var title:String?
     dynamic var descriptionText:String?
     dynamic var price:String?
+    dynamic var creationDate:String?
     
     //location
     dynamic var locationText:String?
@@ -59,6 +60,7 @@ public class Ad: Object {
         newAd.title = data["title"].string
         newAd.descriptionText = data["description"].string
         newAd.price = data["list_label"].string
+        newAd.creationDate = data["created"].string
         
         newAd.locationText = data["city_label"].string
         newAd.latitude = data["map_lat"].string
