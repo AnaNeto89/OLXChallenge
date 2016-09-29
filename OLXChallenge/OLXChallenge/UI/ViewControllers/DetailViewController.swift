@@ -7,34 +7,34 @@
 //
 
 import UIKit
+import RealmSwift
 
-class DetailViewController: UIViewController {
+public class DetailViewController: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet var titleLabel: UILabel!
+    
+    var ad:Ad?
+    var pageIndex:Int?
+    
+    override public func viewDidLoad() {
         super.viewDidLoad()
-
+        if ad != nil {
+            self.titleLabel.text = ad!.title
+        }
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        runConfigurations()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override public func viewWillDisappear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.lt_reset()
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func runConfigurations() {
-        
-        self.navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clearColor())
-        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 }

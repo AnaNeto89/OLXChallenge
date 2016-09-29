@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -115,17 +116,25 @@
                     <connections>
                         <outlet property="loadingCircle" destination="Qe4-yT-xfV" id="Ntz-CJ-bcv"/>
                         <outlet property="tableView" destination="sTY-vi-3AH" id="423-0n-0gG"/>
-                        <segue destination="FfQ-uD-Ppt" kind="show" identifier="SegueFromTableToDetail" id="LTy-C7-ni0"/>
+                        <segue destination="ib6-Kp-EJs" kind="show" identifier="SegueFromTableToPager" id="KxN-N8-61U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="451"/>
+            <point key="canvasLocation" x="1063" y="468"/>
+        </scene>
+        <!--Pager View Controller-->
+        <scene sceneID="3s2-qe-MZ0">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ib6-Kp-EJs" customClass="PagerViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tx7-E1-eLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="468"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="4HV-Cm-rmx">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="FfQ-uD-Ppt" customClass="DetailViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FfQ-uD-Ppt" customClass="DetailViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l36-rk-2nq"/>
                         <viewControllerLayoutGuide type="bottom" id="aU5-Rh-leo"/>
@@ -134,23 +143,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-9f-sIW">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42e-GB-zLs">
+                                <rect key="frame" x="20" y="289" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XYf-9f-sIW" firstAttribute="leading" secondItem="vAN-lr-qbC" secondAttribute="leading" id="4JO-Uj-Ib8"/>
-                            <constraint firstItem="XYf-9f-sIW" firstAttribute="top" secondItem="l36-rk-2nq" secondAttribute="bottom" constant="-64" id="Bb3-dG-152"/>
-                            <constraint firstItem="aU5-Rh-leo" firstAttribute="top" secondItem="XYf-9f-sIW" secondAttribute="bottom" id="n9R-DK-9nt"/>
-                            <constraint firstAttribute="trailing" secondItem="XYf-9f-sIW" secondAttribute="trailing" id="vlE-8D-n3P"/>
+                            <constraint firstItem="42e-GB-zLs" firstAttribute="centerX" secondItem="vAN-lr-qbC" secondAttribute="centerX" id="1Q1-gG-bhm"/>
+                            <constraint firstItem="42e-GB-zLs" firstAttribute="centerY" secondItem="vAN-lr-qbC" secondAttribute="centerY" id="5JL-p4-Iio"/>
+                            <constraint firstItem="42e-GB-zLs" firstAttribute="leading" secondItem="vAN-lr-qbC" secondAttribute="leadingMargin" id="Zc0-T1-pG0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="42e-GB-zLs" secondAttribute="trailing" id="uO4-K2-v3q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="42e-GB-zLs" id="6YY-DD-EPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euG-ge-Rwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="451"/>
+            <point key="canvasLocation" x="2582" y="468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q1O-vJ-gF6">

@@ -16,6 +16,7 @@
 		A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */; };
 		A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */; };
 		A1F4118A1D9D612900ABEAD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1F411891D9D612900ABEAD2 /* Localizable.strings */; };
+		A1F4118E1D9D720000ABEAD2 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4118D1D9D720000ABEAD2 /* PagerViewController.swift */; };
 		A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849261D9BF31A0026A8F8 /* Ad.swift */; };
 		A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492C1D9BF8420026A8F8 /* Photo.swift */; };
 		A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492E1D9C0DBD0026A8F8 /* Response.swift */; };
@@ -36,13 +37,14 @@
 		A125B45E1D9AC42600C57740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A125B4681D9AC9F700C57740 /* OLXAPIRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXAPIRepository.swift; sourceTree = "<group>"; };
 		A125B46A1D9ACE4800C57740 /* OLXManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXManager.swift; sourceTree = "<group>"; };
-		A125B46C1D9AD1EA00C57740 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		A125B46C1D9AD1EA00C57740 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Config.plist; sourceTree = "<group>"; };
 		A1715E9E1D9C76D9005F337B /* olx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = olx.png; sourceTree = "<group>"; };
 		A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OLXChallenge-Bridging-Header.h"; path = "Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1F411861D9D280500ABEAD2 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
-		A1F411891D9D612900ABEAD2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A1F411891D9D612900ABEAD2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
+		A1F4118D1D9D720000ABEAD2 /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		A1F849261D9BF31A0026A8F8 /* Ad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		A1F8492C1D9BF8420026A8F8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A1F8492E1D9C0DBD0026A8F8 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -84,8 +86,6 @@
 		A125B4461D9AC42600C57740 = {
 			isa = PBXGroup;
 			children = (
-				A1F411891D9D612900ABEAD2 /* Localizable.strings */,
-				A125B46C1D9AD1EA00C57740 /* Config.plist */,
 				A125B4511D9AC42600C57740 /* OLXChallenge */,
 				A125B4501D9AC42600C57740 /* Products */,
 				11806F4EDA90AF13DE39A99B /* Pods */,
@@ -104,6 +104,8 @@
 		A125B4511D9AC42600C57740 /* OLXChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				A1F411891D9D612900ABEAD2 /* Localizable.strings */,
+				A125B46C1D9AD1EA00C57740 /* Config.plist */,
 				A1F8811B1D9C570800B84C49 /* AppDelegate.swift */,
 				A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */,
 				A1F411831D9D270B00ABEAD2 /* Libs */,
@@ -193,6 +195,7 @@
 			children = (
 				A1F849351D9C28E80026A8F8 /* ViewController.swift */,
 				A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */,
+				A1F4118D1D9D720000ABEAD2 /* PagerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */,
 				A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */,
 				A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */,
+				A1F4118E1D9D720000ABEAD2 /* PagerViewController.swift in Sources */,
 				A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

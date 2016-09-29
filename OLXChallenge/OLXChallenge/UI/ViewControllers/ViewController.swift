@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet var loadingCircle: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
     
+    private var selectedId:Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +53,14 @@ class ViewController: UIViewController {
     
     private func apiCall(){
         self.olxManager.getData(nextPageURL, page:self.page)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SegueFromTableToPager" {
+            let vc:PagerViewController = segue.destinationViewController as! PagerViewController
+            vc.currentIndex = self.selectedId
+            vc.ads = self.data
+        }
     }
 }
 
@@ -107,9 +117,10 @@ extension ViewController:UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        self.performSegueWithIdentifier("SegueFromTableToDetail", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.selectedId = indexPath.row
+        self.performSegueWithIdentifier("SegueFromTableToPager", sender: self)
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -138,7 +149,7 @@ extension ViewController:MainTableViewCellProtocol {
     
     func shareButtonPressed(id: String?) {
         if let str = id {
-            var result  = try! Realm().objects(Ad.self).filter("adId = '\(str)'")
+            let result  = try! Realm().objects(Ad.self).filter("adId = '\(str)'")
             
             //single result
             if result.count == 1 {
