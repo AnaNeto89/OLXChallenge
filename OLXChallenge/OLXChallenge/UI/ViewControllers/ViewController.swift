@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         
         self.tableView.estimatedRowHeight = 44.0 ;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.registerNib(UINib(nibName: "MainTableViewCell", bundle:nil), forCellReuseIdentifier: "MainTableViewCell")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
         self.tableView.alpha = 0
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    
         self.loadingCircle.startAnimating()
     }
     

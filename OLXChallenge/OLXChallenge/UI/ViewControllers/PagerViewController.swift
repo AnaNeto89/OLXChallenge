@@ -16,12 +16,14 @@ class PagerViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+      
+ 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.dataSource = self
         
         

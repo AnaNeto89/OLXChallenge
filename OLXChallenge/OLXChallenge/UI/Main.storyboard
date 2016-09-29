@@ -137,7 +137,7 @@
         <scene sceneID="3s2-qe-MZ0">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ib6-Kp-EJs" customClass="PagerViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tx7-E1-eLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,6 +181,7 @@
         <scene sceneID="q1O-vJ-gF6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cdE-KI-G0A" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CQR-tP-gZP">
