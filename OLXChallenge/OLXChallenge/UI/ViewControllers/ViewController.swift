@@ -66,12 +66,10 @@ extension ViewController:OLXManagerProtocol {
         self.nextPageURL = response.nextPageURL
         
         self.loadingCircle.stopAnimating()
-        
+        self.tableView.reloadData()
         UIView.animateWithDuration(0.3, animations: {
             self.tableView.alpha = 1
-            }, completion: { bool in
-                self.tableView.reloadData()
-        })
+            })
     }
 }
 
@@ -93,6 +91,8 @@ extension ViewController:UITableViewDelegate {
         cell.adLocationLabel.text = ad.locationText
         cell.adTitleLabel.text = ad.title
         
+        cell.contentView.layoutIfNeeded()
+        
         return cell
     }
     
@@ -109,7 +109,7 @@ extension ViewController:UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return tableView.rowHeight
+        return UITableViewAutomaticDimension
     }
 }
 
