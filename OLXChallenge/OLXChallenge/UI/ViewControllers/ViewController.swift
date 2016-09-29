@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     }
     
     private func apiCall(){
-        self.olxManager.getData(nextPageURL)
+        self.olxManager.getData(nextPageURL, page:self.page)
     }
 }
 
@@ -70,6 +70,15 @@ extension ViewController:OLXManagerProtocol {
         UIView.animateWithDuration(0.3, animations: {
             self.tableView.alpha = 1
         })
+    }
+    
+    func returnError() {
+        let myAlert = UIAlertView()
+        myAlert.title = NSLocalizedString("ERROR_TITLE", comment: "")
+        myAlert.message = NSLocalizedString("ERROR_MSG", comment: "")
+        myAlert.addButtonWithTitle("OK")
+        myAlert.delegate = self
+        myAlert.show()
     }
 }
 

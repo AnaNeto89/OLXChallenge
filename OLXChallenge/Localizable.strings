@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  OLXChallenge
+
+  Created by Ana Neto on 29/09/16.
+  Copyright © 2016 Ana Neto. All rights reserved.
+*/
+"ERROR_TITLE" = "No Connection";
+"ERROR_MSG" = "An Error ocurred when trying to get new ads. Please, check your internet connection.";

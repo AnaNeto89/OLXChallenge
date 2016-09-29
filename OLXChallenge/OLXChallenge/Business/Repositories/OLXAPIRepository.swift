@@ -13,6 +13,7 @@ import SwiftyJSON
 
 public protocol OLXAPIRepositoryProtocol {
     func returnApiResponse(response:Response)
+    func returnError(index:Int)
 }
 
 public class OLXAPIRepository: NSObject {
@@ -24,7 +25,7 @@ public class OLXAPIRepository: NSObject {
         super.init()
     }
     
-    public func olxAPIRequest(url:String){
+    public func olxAPIRequest(url:String, page:Int){
         
         print(url)
         
@@ -32,14 +33,24 @@ public class OLXAPIRepository: NSObject {
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
-                // response handling code
-                if let data = response.data {
-                    if let json:JSON = JSON(data: data) {
-                        let response = Response.parseFromJSON(json)
-                        self.delegate?.returnApiResponse(response)
+                
+                switch response.result {
+                case .Success:
+                    // response handling code
+                    if let data = response.data {
+                        if let json:JSON = JSON(data: data) {
+                            let response = Response.parseFromJSON(json)
+                            self.delegate?.returnApiResponse(response)
+                        }
                     }
+                    break
+                case .Failure(let error):
+                    //error handling
+                    print(error.description)
+                    self.delegate?.returnError(page)
+                    break
                 }
                 
-            }
+        }
     }
 }
