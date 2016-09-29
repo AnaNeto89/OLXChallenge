@@ -11,7 +11,7 @@ import RealmSwift
 import SDWebImage
 
 class ViewController: UIViewController {
-
+    
     private var olxManager:OLXManager = OLXManager.sharedInstance
     private var isLoadingTableView = true
     private var page:Int = 0
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         runScreenConfigurations()
         apiCall()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,7 +69,7 @@ extension ViewController:OLXManagerProtocol {
         self.tableView.reloadData()
         UIView.animateWithDuration(0.3, animations: {
             self.tableView.alpha = 1
-            })
+        })
     }
 }
 
@@ -78,7 +78,7 @@ extension ViewController:UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:MainTableViewCell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell", forIndexPath: indexPath) as! MainTableViewCell
         let ad = data![indexPath.row]
-
+        
         if let imgURL = ad.getImageURL(0) {
             cell.adImageView.sd_setImageWithURL(NSURL(string: imgURL), placeholderImage: UIImage(named: "imagePlaceholder"))
         }
@@ -86,7 +86,8 @@ extension ViewController:UITableViewDelegate {
             cell.adImageView.image = UIImage(named: "imagePlaceholder")
         }
         
-        
+        cell.delegate = self
+        cell.adId = ad.adId
         cell.priceLabel.text = ad.price
         cell.adLocationLabel.text = ad.locationText
         cell.adTitleLabel.text = ad.title
@@ -124,3 +125,31 @@ extension ViewController:UITableViewDataSource {
     }
 }
 
+extension ViewController:MainTableViewCellProtocol {
+    
+    func shareButtonPressed(id: String?) {
+        if let str = id {
+            var result  = try! Realm().objects(Ad.self).filter("adId = '\(str)'")
+            
+            //single result
+            if result.count == 1 {
+                
+            let textToShare = result.first!.title
+            if let url = result.first!.url {
+                if let adURL = NSURL(string: url) {
+                    let objectsToShare = [textToShare!,adURL]
+                    
+                    let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                    activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+                    
+                    // exclude some activity types from the list (optional)
+                    activityViewController.excludedActivityTypes = [ UIActivityTypeAirDrop, UIActivityTypePostToFacebook ]
+                    
+                    // present the view controller
+                    self.presentViewController(activityViewController, animated: true, completion: nil)
+                }
+            }
+            }
+        }
+    }
+}

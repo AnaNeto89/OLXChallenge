@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clearColor())
+        runConfigurations()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -30,5 +30,11 @@ class DetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func runConfigurations() {
+        
+        self.navigationController?.navigationBar.lt_setBackgroundColor(UIColor.clearColor())
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 }
