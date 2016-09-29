@@ -1,5 +1,12 @@
 PODS:
   - Alamofire (3.5.0)
+  - ImageSlideshow (0.6):
+    - ImageSlideshow/Core (= 0.6)
+  - ImageSlideshow/Core (0.6)
+  - ImageSlideshow/SDWebImage (0.6):
+    - ImageSlideshow/Core
+    - SDWebImage (~> 3.7)
+  - MXParallaxHeader (0.5.2)
   - Realm (2.0.0):
     - Realm/Headers (= 2.0.0)
   - Realm/Headers (2.0.0)
@@ -12,6 +19,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - ImageSlideshow (~> 0.6)
+  - ImageSlideshow/SDWebImage
+  - MXParallaxHeader
   - RealmSwift
   - SDWebImage
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`, branch `swift2`)
@@ -28,6 +38,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: b70a7352335f8ea5babd0a923eb7e8eacc67b877
+  ImageSlideshow: 06bfd96b5e56264d2d9d38262b73e32034b85288
+  MXParallaxHeader: 5070ba8e8af27ec793c0d32ae82cfd2318e59635
   Realm: 6dda421ae4b3e9a09742fc2cf4b876d459cbedcd
   RealmSwift: 7d015f34a2781a50889be9b5a15c36c08597ea0e
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c

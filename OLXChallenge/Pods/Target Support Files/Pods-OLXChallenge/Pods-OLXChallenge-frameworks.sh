@@ -85,6 +85,8 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-OLXChallenge/Alamofire.framework"
+  install_framework "Pods-OLXChallenge/ImageSlideshow.framework"
+  install_framework "Pods-OLXChallenge/MXParallaxHeader.framework"
   install_framework "Pods-OLXChallenge/Realm.framework"
   install_framework "Pods-OLXChallenge/RealmSwift.framework"
   install_framework "Pods-OLXChallenge/SDWebImage.framework"
@@ -92,6 +94,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-OLXChallenge/Alamofire.framework"
+  install_framework "Pods-OLXChallenge/ImageSlideshow.framework"
+  install_framework "Pods-OLXChallenge/MXParallaxHeader.framework"
   install_framework "Pods-OLXChallenge/Realm.framework"
   install_framework "Pods-OLXChallenge/RealmSwift.framework"
   install_framework "Pods-OLXChallenge/SDWebImage.framework"

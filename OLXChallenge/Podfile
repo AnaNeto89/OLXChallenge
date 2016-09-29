@@ -9,6 +9,9 @@ target 'OLXChallenge' do
 	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git', :branch => 'swift2'
 	pod 'RealmSwift'
     pod 'SDWebImage'
+    pod 'MXParallaxHeader'
+    pod 'ImageSlideshow', '~> 0.6'
+    pod 'ImageSlideshow/SDWebImage'
 
 end
 

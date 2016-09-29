@@ -13,6 +13,8 @@
 		A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B46A1D9ACE4800C57740 /* OLXManager.swift */; };
 		A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A125B46C1D9AD1EA00C57740 /* Config.plist */; };
 		A1715E9F1D9C76D9005F337B /* olx.png in Resources */ = {isa = PBXBuildFile; fileRef = A1715E9E1D9C76D9005F337B /* olx.png */; };
+		A1AD32111D9DAC6400068835 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD32101D9DAC6400068835 /* DetailHeaderView.swift */; };
+		A1AD32131D9DAC8B00068835 /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AD32121D9DAC8B00068835 /* DetailHeaderView.xib */; };
 		A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */; };
 		A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */; };
 		A1F4118A1D9D612900ABEAD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1F411891D9D612900ABEAD2 /* Localizable.strings */; };
@@ -39,6 +41,8 @@
 		A125B46A1D9ACE4800C57740 /* OLXManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXManager.swift; sourceTree = "<group>"; };
 		A125B46C1D9AD1EA00C57740 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Config.plist; sourceTree = "<group>"; };
 		A1715E9E1D9C76D9005F337B /* olx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = olx.png; sourceTree = "<group>"; };
+		A1AD32101D9DAC6400068835 /* DetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		A1AD32121D9DAC8B00068835 /* DetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailHeaderView.xib; sourceTree = "<group>"; };
 		A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OLXChallenge-Bridging-Header.h"; path = "Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1F411861D9D280500ABEAD2 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				A1F849351D9C28E80026A8F8 /* ViewController.swift */,
 				A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */,
 				A1F4118D1D9D720000ABEAD2 /* PagerViewController.swift */,
+				A1AD32101D9DAC6400068835 /* DetailHeaderView.swift */,
+				A1AD32121D9DAC8B00068835 /* DetailHeaderView.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				A1F8493A1D9C2DDA0026A8F8 /* LaunchScreen.storyboard in Resources */,
 				A125B45A1D9AC42600C57740 /* Assets.xcassets in Resources */,
 				A1F849361D9C28E80026A8F8 /* Main.storyboard in Resources */,
+				A1AD32131D9DAC8B00068835 /* DetailHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +341,7 @@
 				A1F849391D9C29160026A8F8 /* MainTableViewCell.swift in Sources */,
 				A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */,
 				A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */,
+				A1AD32111D9DAC6400068835 /* DetailHeaderView.swift in Sources */,
 				A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */,
 				A1F4118E1D9D720000ABEAD2 /* PagerViewController.swift in Sources */,
 				A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */,

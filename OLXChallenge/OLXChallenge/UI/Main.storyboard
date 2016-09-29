@@ -136,7 +136,9 @@
         <!--Pager View Controller-->
         <scene sceneID="3s2-qe-MZ0">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ib6-Kp-EJs" customClass="PagerViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ib6-Kp-EJs" customClass="PagerViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tx7-E1-eLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1874" y="468"/>
@@ -144,7 +146,7 @@
         <!--Detail View Controller-->
         <scene sceneID="4HV-Cm-rmx">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FfQ-uD-Ppt" customClass="DetailViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FfQ-uD-Ppt" customClass="DetailViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l36-rk-2nq"/>
                         <viewControllerLayoutGuide type="bottom" id="aU5-Rh-leo"/>
@@ -154,7 +156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="seW-vJ-NbR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="664"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -163,9 +165,13 @@
                             <constraint firstAttribute="trailing" secondItem="seW-vJ-NbR" secondAttribute="trailing" id="7CY-Z2-Nn7"/>
                             <constraint firstItem="seW-vJ-NbR" firstAttribute="top" secondItem="vAN-lr-qbC" secondAttribute="top" id="d5D-CT-yl1"/>
                             <constraint firstItem="seW-vJ-NbR" firstAttribute="leading" secondItem="vAN-lr-qbC" secondAttribute="leading" id="h2K-2f-iIj"/>
-                            <constraint firstItem="aU5-Rh-leo" firstAttribute="top" secondItem="seW-vJ-NbR" secondAttribute="bottom" id="vuV-JL-I1q"/>
+                            <constraint firstItem="aU5-Rh-leo" firstAttribute="top" secondItem="seW-vJ-NbR" secondAttribute="bottom" constant="-64" id="vuV-JL-I1q"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="tableView" destination="seW-vJ-NbR" id="V4c-16-0MZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euG-ge-Rwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

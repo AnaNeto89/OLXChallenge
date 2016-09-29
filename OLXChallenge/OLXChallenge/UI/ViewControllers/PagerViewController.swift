@@ -16,13 +16,22 @@ class PagerViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.dataSource = self
+        
         
         let startVC = self.viewControllerAtIndex(currentIndex!, ad: self.ads![currentIndex!])
         let viewControllers = [startVC]
         self.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
     }
 
     override func didReceiveMemoryWarning() {
