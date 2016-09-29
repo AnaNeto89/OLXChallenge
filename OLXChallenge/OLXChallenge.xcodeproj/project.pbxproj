@@ -14,6 +14,7 @@
 		A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A125B46C1D9AD1EA00C57740 /* Config.plist */; };
 		A1715E9F1D9C76D9005F337B /* olx.png in Resources */ = {isa = PBXBuildFile; fileRef = A1715E9E1D9C76D9005F337B /* olx.png */; };
 		A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */; };
+		A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */; };
 		A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849261D9BF31A0026A8F8 /* Ad.swift */; };
 		A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492C1D9BF8420026A8F8 /* Photo.swift */; };
 		A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492E1D9C0DBD0026A8F8 /* Response.swift */; };
@@ -37,6 +38,9 @@
 		A125B46C1D9AD1EA00C57740 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		A1715E9E1D9C76D9005F337B /* olx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = olx.png; sourceTree = "<group>"; };
 		A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OLXChallenge-Bridging-Header.h"; path = "Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1F411861D9D280500ABEAD2 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		A1F849261D9BF31A0026A8F8 /* Ad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		A1F8492C1D9BF8420026A8F8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A1F8492E1D9C0DBD0026A8F8 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				A1F8811B1D9C570800B84C49 /* AppDelegate.swift */,
+				A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */,
+				A1F411831D9D270B00ABEAD2 /* Libs */,
 				A1F849311D9C28E80026A8F8 /* UI */,
 				A125B4651D9AC9E100C57740 /* Business */,
 				A125B4591D9AC42600C57740 /* Assets.xcassets */,
@@ -142,6 +148,23 @@
 				A1F8492E1D9C0DBD0026A8F8 /* Response.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A1F411831D9D270B00ABEAD2 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				A1F411841D9D273B00ABEAD2 /* LTNavigationAwesome */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		A1F411841D9D273B00ABEAD2 /* LTNavigationAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				A1F411861D9D280500ABEAD2 /* UINavigationBar+Awesome.h */,
+				A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */,
+			);
+			path = LTNavigationAwesome;
 			sourceTree = "<group>";
 		};
 		A1F849311D9C28E80026A8F8 /* UI */ = {
@@ -305,6 +328,7 @@
 				A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */,
 				A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */,
 				A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */,
+				A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +436,7 @@
 			baseConfigurationReference = 41BB11F2DABC105DD0B6210E /* Pods-OLXChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OLXChallenge/Info.plist;
@@ -420,6 +445,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pt.ananeto.OLXChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "OLXChallenge/Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,6 +455,7 @@
 			baseConfigurationReference = 94EF20BF1A8E1F4A63FDE2EA /* Pods-OLXChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OLXChallenge/Info.plist;
@@ -436,6 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pt.ananeto.OLXChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "OLXChallenge/Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h";
 			};
 			name = Release;
 		};

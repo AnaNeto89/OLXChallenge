@@ -110,17 +110,28 @@
         <!--Detail View Controller-->
         <scene sceneID="4HV-Cm-rmx">
             <objects>
-                <viewController id="FfQ-uD-Ppt" customClass="DetailViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="FfQ-uD-Ppt" customClass="DetailViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l36-rk-2nq"/>
                         <viewControllerLayoutGuide type="bottom" id="aU5-Rh-leo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vAN-lr-qbC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XYf-9f-sIW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XYf-9f-sIW" firstAttribute="leading" secondItem="vAN-lr-qbC" secondAttribute="leading" id="4JO-Uj-Ib8"/>
+                            <constraint firstItem="XYf-9f-sIW" firstAttribute="top" secondItem="l36-rk-2nq" secondAttribute="bottom" constant="-64" id="Bb3-dG-152"/>
+                            <constraint firstItem="aU5-Rh-leo" firstAttribute="top" secondItem="XYf-9f-sIW" secondAttribute="bottom" id="n9R-DK-9nt"/>
+                            <constraint firstAttribute="trailing" secondItem="XYf-9f-sIW" secondAttribute="trailing" id="vlE-8D-n3P"/>
+                        </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="euG-ge-Rwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
