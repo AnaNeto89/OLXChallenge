@@ -13,6 +13,7 @@
 		A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B46A1D9ACE4800C57740 /* OLXManager.swift */; };
 		A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A125B46C1D9AD1EA00C57740 /* Config.plist */; };
 		A1715E9F1D9C76D9005F337B /* olx.png in Resources */ = {isa = PBXBuildFile; fileRef = A1715E9E1D9C76D9005F337B /* olx.png */; };
+		A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */; };
 		A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F849261D9BF31A0026A8F8 /* Ad.swift */; };
 		A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492C1D9BF8420026A8F8 /* Photo.swift */; };
 		A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F8492E1D9C0DBD0026A8F8 /* Response.swift */; };
@@ -35,6 +36,7 @@
 		A125B46A1D9ACE4800C57740 /* OLXManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXManager.swift; sourceTree = "<group>"; };
 		A125B46C1D9AD1EA00C57740 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		A1715E9E1D9C76D9005F337B /* olx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = olx.png; sourceTree = "<group>"; };
+		A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A1F849261D9BF31A0026A8F8 /* Ad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		A1F8492C1D9BF8420026A8F8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		A1F8492E1D9C0DBD0026A8F8 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				A1F849351D9C28E80026A8F8 /* ViewController.swift */,
+				A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */,
 				A1F8811C1D9C570800B84C49 /* AppDelegate.swift in Sources */,
 				A1F849371D9C28E80026A8F8 /* ViewController.swift in Sources */,
 				A1F8492D1D9BF8420026A8F8 /* Photo.swift in Sources */,
@@ -411,7 +415,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OLXChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pt.ananeto.OLXChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,7 +431,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OLXChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pt.ananeto.OLXChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";

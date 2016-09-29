@@ -23,6 +23,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.estimatedRowHeight = 44.0 ;
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -93,10 +96,20 @@ extension ViewController:UITableViewDelegate {
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        self.performSegueWithIdentifier("SegueFromTableToDetail", sender: self)
+    }
+    
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row+1 == data?.count {
             apiCall()
         }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return tableView.rowHeight
     }
 }
 

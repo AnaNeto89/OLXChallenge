@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -18,9 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="olx.png" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-f1-Wcs">
-                                <rect key="frame" x="175" y="175" width="250" height="250"/>
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="AUX-Xd-M81"/>
                                     <constraint firstAttribute="width" secondItem="b7B-f1-Wcs" secondAttribute="height" multiplier="1:1" id="okZ-KG-gsf"/>
                                 </constraints>
                             </imageView>
@@ -28,6 +28,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="b7B-f1-Wcs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Atv-FZ-IRv"/>
+                            <constraint firstItem="b7B-f1-Wcs" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="5:15" id="G9k-6k-Ead"/>
                             <constraint firstItem="b7B-f1-Wcs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JUX-nE-usu"/>
                         </constraints>
                     </view>
