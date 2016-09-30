@@ -12,10 +12,14 @@ import MXParallaxHeader
 
 public class DetailViewController: UIViewController {
     
+    //MARK: Variables
     var ad:Ad?
     var pageIndex:Int?
     
+    //MARK: IBOutlets
     @IBOutlet var tableView: UITableView!
+    
+    //MARK: lifecycle methods
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,23 @@ public class DetailViewController: UIViewController {
     override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        buildHeader()
+        tableViewConfigurations()
+
+    }
+    
+    override public func viewWillDisappear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override public func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //Mark: auxiliar methods
+    
+    func buildHeader(){
         if let photo = ad?.getImageURL(0) {
             let headerView = NSBundle.mainBundle().loadNibNamed("DetailHeaderView", owner: self, options: nil).first as? DetailHeaderView
             headerView?.imageView.sd_setImageWithURL(NSURL(string: photo))
@@ -34,6 +55,9 @@ public class DetailViewController: UIViewController {
             tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
             tableView.parallaxHeader.minimumHeight = 0
         }
+    }
+    
+    func tableViewConfigurations(){
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,18 +69,12 @@ public class DetailViewController: UIViewController {
         self.tableView.registerNib(UINib(nibName: "AdPriceTableViewCell", bundle:nil), forCellReuseIdentifier: "AdPriceTableViewCell")
         self.tableView.registerNib(UINib(nibName: "AdVendorTableViewCell", bundle:nil), forCellReuseIdentifier: "AdVendorTableViewCell")
     }
-    
-    override public func viewWillDisappear(animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 extension DetailViewController:UITableViewDelegate {
+    
+    //MARK: UITableViewDelegate methods
+    
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -74,12 +92,14 @@ extension DetailViewController:UITableViewDelegate {
     }
     
     public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        //return section == 0 ? 2 : 0
         return 23
     }
 }
 
 extension DetailViewController:UITableViewDataSource {
+    
+    //MARK: UITableViewDataSource methods
+    
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         switch indexPath.section {
@@ -135,7 +155,12 @@ extension DetailViewController:UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
+        return buildDescriptionHeader(section)
+    }
+    
+    //MARK: auxiliar methods
+    
+    func buildDescriptionHeader(section:Int)-> UIView {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 23))
         let label = UILabel(frame: CGRect(x: 8, y: 0, width: self.tableView.frame.width-16, height: 21))
         
@@ -156,10 +181,11 @@ extension DetailViewController:UITableViewDataSource {
             label.text = ""
         }
         
-        view.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor(red: 222.0/255.0, green: 222.0/255.0, blue: 222.0/255.0, alpha: 1.0)
         view.addSubview(label)
         label.textColor = UIColor.darkGrayColor()
         
         return view
+
     }
 }

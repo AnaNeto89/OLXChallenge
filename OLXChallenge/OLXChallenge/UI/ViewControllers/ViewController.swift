@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     }
     
     private func runScreenConfigurations(){
+        
+        self.title = NSLocalizedString("ADS_LIST_TITLE", comment: "")
         self.olxManager.delegate = self
         self.tableView.alpha = 0
         self.tableView.delegate = self
@@ -115,6 +117,9 @@ extension ViewController:UITableViewDelegate {
         cell.creationLabel.text = ad.creationDate
         
         cell.contentView.layoutIfNeeded()
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
     }
