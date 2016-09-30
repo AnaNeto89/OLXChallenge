@@ -11,6 +11,10 @@ import RealmSwift
 import MXParallaxHeader
 import ImageSlideshow
 
+public protocol DetailViewControllerProtocol {
+    func locationPressed()
+}
+
 public class DetailViewController: UIViewController {
     
     //MARK: Variables
@@ -18,6 +22,7 @@ public class DetailViewController: UIViewController {
     var pageIndex:Int?
     var slideshowTransitioningDelegate: ZoomAnimatedTransitioningDelegate?
     var header:DetailHeaderView?
+    var delegate:DetailViewControllerProtocol?
     
     //MARK: IBOutlets
     @IBOutlet var tableView: UITableView!
@@ -53,7 +58,7 @@ public class DetailViewController: UIViewController {
         if let photo = ad?.getImageURL(0) {
             self.header = NSBundle.mainBundle().loadNibNamed("DetailHeaderView", owner: self, options: nil).first as? DetailHeaderView
             
-            self.header!.imageView.backgroundColor = UIColor.whiteColor()
+            self.header!.imageView.backgroundColor = UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 1.0)
             self.header!.imageView.slideshowInterval = 5.0
             self.header!.imageView.pageControlPosition = PageControlPosition.UnderScrollView
             self.header!.imageView.pageControl.currentPageIndicatorTintColor = UIColor.lightGrayColor();
@@ -126,7 +131,7 @@ extension DetailViewController:UITableViewDelegate {
     }
     
     public func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 2
+        return 15
     }
     
     public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -178,7 +183,6 @@ extension DetailViewController:UITableViewDataSource {
             let cell:AdLocationTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdLocationTableViewCell", forIndexPath: indexPath) as! AdLocationTableViewCell
             cell.locationLabel.text =  self.ad?.locationText
             
-            cell.userInteractionEnabled = false
             cell.contentView.layoutIfNeeded()
             
             return cell
@@ -196,6 +200,13 @@ extension DetailViewController:UITableViewDataSource {
         }
     }
     
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 4 {
+            self.delegate?.locationPressed()
+        }
+    }
+    
     public func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
@@ -210,7 +221,7 @@ extension DetailViewController:UITableViewDataSource {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 23))
         let label = UILabel(frame: CGRect(x: 8, y: 0, width: self.tableView.frame.width-16, height: 21))
         
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 14)
+        label.font = UIFont(name: "HelveticaNeue-Light", size: 12)
         
         switch section {
         case 0:
@@ -229,7 +240,7 @@ extension DetailViewController:UITableViewDataSource {
             label.text = ""
         }
         
-        view.backgroundColor = UIColor(red: 222.0/255.0, green: 222.0/255.0, blue: 222.0/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 1.0)
         view.addSubview(label)
         label.textColor = UIColor.darkGrayColor()
         

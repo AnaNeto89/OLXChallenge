@@ -12,7 +12,6 @@
 		A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B4681D9AC9F700C57740 /* OLXAPIRepository.swift */; };
 		A125B46B1D9ACE4800C57740 /* OLXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A125B46A1D9ACE4800C57740 /* OLXManager.swift */; };
 		A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A125B46C1D9AD1EA00C57740 /* Config.plist */; };
-		A1715E9F1D9C76D9005F337B /* olx.png in Resources */ = {isa = PBXBuildFile; fileRef = A1715E9E1D9C76D9005F337B /* olx.png */; };
 		A1AD32111D9DAC6400068835 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AD32101D9DAC6400068835 /* DetailHeaderView.swift */; };
 		A1AD32131D9DAC8B00068835 /* DetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AD32121D9DAC8B00068835 /* DetailHeaderView.xib */; };
 		A1AD32161D9DB72700068835 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1AD32151D9DB72700068835 /* MainTableViewCell.xib */; };
@@ -30,6 +29,7 @@
 		A1E50E151D9EA58E0054CDD1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E50E141D9EA58E0054CDD1 /* CoreLocation.framework */; };
 		A1E50E1A1D9ECD780054CDD1 /* AdCreationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E50E181D9ECD780054CDD1 /* AdCreationTableViewCell.swift */; };
 		A1E50E1B1D9ECD780054CDD1 /* AdCreationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E50E191D9ECD780054CDD1 /* AdCreationTableViewCell.xib */; };
+		A1E50E1D1D9ED4520054CDD1 /* icon_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = A1E50E1C1D9ED4520054CDD1 /* icon_splash.png */; };
 		A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */; };
 		A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */; };
 		A1F4118A1D9D612900ABEAD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1F411891D9D612900ABEAD2 /* Localizable.strings */; };
@@ -55,7 +55,6 @@
 		A125B4681D9AC9F700C57740 /* OLXAPIRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXAPIRepository.swift; sourceTree = "<group>"; };
 		A125B46A1D9ACE4800C57740 /* OLXManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OLXManager.swift; sourceTree = "<group>"; };
 		A125B46C1D9AD1EA00C57740 /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = ../Config.plist; sourceTree = "<group>"; };
-		A1715E9E1D9C76D9005F337B /* olx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = olx.png; sourceTree = "<group>"; };
 		A1AD32101D9DAC6400068835 /* DetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailHeaderView.swift; path = ViewControllers/DetailHeaderView.swift; sourceTree = "<group>"; };
 		A1AD32121D9DAC8B00068835 /* DetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailHeaderView.xib; path = ViewControllers/DetailHeaderView.xib; sourceTree = "<group>"; };
 		A1AD32151D9DB72700068835 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		A1E50E141D9EA58E0054CDD1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A1E50E181D9ECD780054CDD1 /* AdCreationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdCreationTableViewCell.swift; sourceTree = "<group>"; };
 		A1E50E191D9ECD780054CDD1 /* AdCreationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdCreationTableViewCell.xib; sourceTree = "<group>"; };
+		A1E50E1C1D9ED4520054CDD1 /* icon_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_splash.png; sourceTree = "<group>"; };
 		A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OLXChallenge-Bridging-Header.h"; path = "Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1F411861D9D280500ABEAD2 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				A1F849311D9C28E80026A8F8 /* UI */,
 				A125B4651D9AC9E100C57740 /* Business */,
 				A125B4591D9AC42600C57740 /* Assets.xcassets */,
-				A1715E9E1D9C76D9005F337B /* olx.png */,
+				A1E50E1C1D9ED4520054CDD1 /* icon_splash.png */,
 				A125B45B1D9AC42600C57740 /* LaunchScreen.storyboard */,
 				A125B45E1D9AC42600C57740 /* Info.plist */,
 			);
@@ -349,7 +349,7 @@
 				A1E50E061D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib in Resources */,
 				A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */,
 				A1F4118A1D9D612900ABEAD2 /* Localizable.strings in Resources */,
-				A1715E9F1D9C76D9005F337B /* olx.png in Resources */,
+				A1E50E1D1D9ED4520054CDD1 /* icon_splash.png in Resources */,
 				A1F8493A1D9C2DDA0026A8F8 /* LaunchScreen.storyboard in Resources */,
 				A1E50DFE1D9E5F650054CDD1 /* AdPriceTableViewCell.xib in Resources */,
 				A1AD32251D9DBE2C00068835 /* AdDescriptionTableViewCell.xib in Resources */,

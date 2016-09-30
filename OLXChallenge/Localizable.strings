@@ -8,10 +8,11 @@
 "ERROR_TITLE" = "No Connection";
 "ERROR_MSG" = "An Error ocurred when trying to get new ads. Please, check your internet connection.";
 
-"SECTION_PRODUCT_TITLE" = "Product";
-"SECTION_PRICE_TITLE" = "Price";
-"SECTION_VENDOR_TITLE" = "Vendor";
-"SECTION_LOCATION_TITLE" = "Location";
-"SECTION_DESCRIPTION_TITLE" = "Description";
-"SECTION_CREATEDATE_TITLE" = "Created";
+"SECTION_PRODUCT_TITLE" = "PRODUCT";
+"SECTION_PRICE_TITLE" = "PRICE";
+"SECTION_VENDOR_TITLE" = "VENDOR";
+"SECTION_LOCATION_TITLE" = "LOCATION";
+"SECTION_DESCRIPTION_TITLE" = "DESCRIPTION";
+"SECTION_CREATEDATE_TITLE" = "CREATED";
 "ADS_LIST_TITLE" = "Ads";
+"MAPS" = "Map";

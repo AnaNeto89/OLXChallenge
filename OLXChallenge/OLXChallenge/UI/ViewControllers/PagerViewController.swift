@@ -62,6 +62,7 @@ class PagerViewController: UIPageViewController {
         self.title = "Ad "+self.ads![index].adId!
         
         let vc:DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        vc.delegate = self
         vc.ad = ad
         vc.pageIndex = index
         return vc
@@ -127,6 +128,12 @@ extension PagerViewController:UIPageViewControllerDataSource {
 
 extension PagerViewController:UIPageViewControllerDelegate {
     
+}
+
+extension PagerViewController:DetailViewControllerProtocol {
+    func locationPressed() {
+        self.performSegueWithIdentifier("SegueFromPagerToMap", sender: self)
+    }
 }
 
 extension PagerViewController:OLXManagerProtocol {
