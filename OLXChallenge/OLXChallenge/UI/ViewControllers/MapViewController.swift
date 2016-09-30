@@ -12,9 +12,14 @@ import MapKit
 class MapViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
+    
+    var latitude:Double?
+    var longitude:Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
 

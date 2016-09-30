@@ -7,3 +7,9 @@
 */
 "ERROR_TITLE" = "No Connection";
 "ERROR_MSG" = "An Error ocurred when trying to get new ads. Please, check your internet connection.";
+
+"SECTION_PRODUCT_TITLE" = "Product";
+"SECTION_PRICE_TITLE" = "Price";
+"SECTION_VENDOR_TITLE" = "Vendor";
+"SECTION_LOCATION_TITLE" = "Location";
+"SECTION_DESCRIPTION_TITLE" = "Description";

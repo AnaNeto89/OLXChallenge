@@ -25,6 +25,8 @@
 		A1E50DFD1D9E5F650054CDD1 /* AdPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E50DFB1D9E5F650054CDD1 /* AdPriceTableViewCell.swift */; };
 		A1E50DFE1D9E5F650054CDD1 /* AdPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E50DFC1D9E5F650054CDD1 /* AdPriceTableViewCell.xib */; };
 		A1E50E001D9E6AE30054CDD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E50DFF1D9E6AE30054CDD1 /* MapViewController.swift */; };
+		A1E50E051D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E50E031D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift */; };
+		A1E50E061D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E50E041D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib */; };
 		A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */; };
 		A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */; };
 		A1F4118A1D9D612900ABEAD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1F411891D9D612900ABEAD2 /* Localizable.strings */; };
@@ -63,6 +65,8 @@
 		A1E50DFB1D9E5F650054CDD1 /* AdPriceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPriceTableViewCell.swift; sourceTree = "<group>"; };
 		A1E50DFC1D9E5F650054CDD1 /* AdPriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdPriceTableViewCell.xib; sourceTree = "<group>"; };
 		A1E50DFF1D9E6AE30054CDD1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A1E50E031D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdVendorTableViewCell.swift; sourceTree = "<group>"; };
+		A1E50E041D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdVendorTableViewCell.xib; sourceTree = "<group>"; };
 		A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OLXChallenge-Bridging-Header.h"; path = "Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1F411861D9D280500ABEAD2 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				A1AD32231D9DBE2C00068835 /* AdDescriptionTableViewCell.xib */,
 				A1E50DFB1D9E5F650054CDD1 /* AdPriceTableViewCell.swift */,
 				A1E50DFC1D9E5F650054CDD1 /* AdPriceTableViewCell.xib */,
+				A1E50E031D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift */,
+				A1E50E041D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib */,
 			);
 			name = AdDetail;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E50E061D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib in Resources */,
 				A125B46D1D9AD1EA00C57740 /* Config.plist in Resources */,
 				A1F4118A1D9D612900ABEAD2 /* Localizable.strings in Resources */,
 				A1715E9F1D9C76D9005F337B /* olx.png in Resources */,
@@ -384,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1E50E051D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift in Sources */,
 				A1E50DFD1D9E5F650054CDD1 /* AdPriceTableViewCell.swift in Sources */,
 				A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */,
 				A1F8811C1D9C570800B84C49 /* AppDelegate.swift in Sources */,

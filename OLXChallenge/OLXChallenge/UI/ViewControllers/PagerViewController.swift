@@ -30,6 +30,7 @@ class PagerViewController: UIPageViewController {
         let startVC = self.viewControllerAtIndex(currentIndex!, ad: self.ads![currentIndex!])
         let viewControllers = [startVC]
         self.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+    
     }
     
     override func viewWillDisappear(animated: Bool) {
