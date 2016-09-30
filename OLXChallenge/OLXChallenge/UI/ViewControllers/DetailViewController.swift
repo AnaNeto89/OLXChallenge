@@ -52,7 +52,7 @@ public class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //Mark: auxiliar methods
+    //MARK: auxiliar methods
     
     func buildHeader(){
         if let photo = ad?.getImageURL(0) {
@@ -245,6 +245,5 @@ extension DetailViewController:UITableViewDataSource {
         label.textColor = UIColor.darkGrayColor()
         
         return view
-
     }
 }

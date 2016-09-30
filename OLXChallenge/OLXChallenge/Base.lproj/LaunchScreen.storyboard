@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="olx.png" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-f1-Wcs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="b7B-f1-Wcs">
                                 <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b7B-f1-Wcs" secondAttribute="height" multiplier="1:1" id="okZ-KG-gsf"/>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="olx.png" width="512" height="512"/>
+        <image name="icon_splash.png" width="200" height="201"/>
     </resources>
 </document>

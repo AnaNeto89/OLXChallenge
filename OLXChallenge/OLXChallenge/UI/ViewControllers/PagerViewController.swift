@@ -84,6 +84,8 @@ class PagerViewController: UIPageViewController {
     }
 }
 
+//MARK: UIPageViewControllerDataSource methods
+
 extension PagerViewController:UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
@@ -126,9 +128,13 @@ extension PagerViewController:UIPageViewControllerDataSource {
     }
 }
 
+//MARK: UIPageViewControllerDelegate methods
+
 extension PagerViewController:UIPageViewControllerDelegate {
     
 }
+
+//MARK: DetailViewControllerProtocol methods
 
 extension PagerViewController:DetailViewControllerProtocol {
     func locationPressed() {

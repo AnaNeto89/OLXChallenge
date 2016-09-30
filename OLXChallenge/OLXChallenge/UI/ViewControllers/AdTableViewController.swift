@@ -12,16 +12,19 @@ import SDWebImage
 
 class AdTableViewController: UIViewController {
     
+    //MARK: Variables
     private var olxManager:OLXManager = OLXManager.sharedInstance
     private var isLoadingTableView = true
     private var page:Int = 0
     private var data:List<Ad>?
     private var nextPageURL:String?
+    private var selectedId:Int?
     
+    //MARK: IBOutlets
     @IBOutlet var loadingCircle: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
     
-    private var selectedId:Int?
+    //MARK: lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,6 @@ class AdTableViewController: UIViewController {
         self.tableView.estimatedRowHeight = 44.0 ;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.registerNib(UINib(nibName: "MainTableViewCell", bundle:nil), forCellReuseIdentifier: "MainTableViewCell")
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -44,6 +46,8 @@ class AdTableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: auxiliar methods
+    
     private func runScreenConfigurations(){
         
         self.title = NSLocalizedString("ADS_LIST_TITLE", comment: "")
@@ -51,7 +55,7 @@ class AdTableViewController: UIViewController {
         self.tableView.alpha = 0
         self.tableView.delegate = self
         self.tableView.dataSource = self
-    
+        
         self.loadingCircle.startAnimating()
     }
     
@@ -70,6 +74,8 @@ class AdTableViewController: UIViewController {
         }
     }
 }
+
+//MARK: OLXManagerProtocol methods
 
 extension AdTableViewController:OLXManagerProtocol {
     
@@ -99,6 +105,8 @@ extension AdTableViewController:OLXManagerProtocol {
     }
 }
 
+//MARK: PagerViewControllerProtocol methods
+
 extension AdTableViewController:PagerViewControllerProtocol {
     func continueWithCurrentData(data: List<Ad>, page: Int, nextURL: String) {
         self.data = data
@@ -106,6 +114,8 @@ extension AdTableViewController:PagerViewControllerProtocol {
         self.nextPageURL = nextURL
     }
 }
+
+//MARK: UITableViewDelegate methods
 
 extension AdTableViewController:UITableViewDelegate {
     
@@ -153,6 +163,8 @@ extension AdTableViewController:UITableViewDelegate {
     }
 }
 
+//MARK: UITableViewDataSource methods
+
 extension AdTableViewController:UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -164,6 +176,8 @@ extension AdTableViewController:UITableViewDataSource {
     }
 }
 
+//MARK: MainTableViewCellProtocol methods
+
 extension AdTableViewController:MainTableViewCellProtocol {
     
     func shareButtonPressed(id: String?) {
@@ -173,21 +187,21 @@ extension AdTableViewController:MainTableViewCellProtocol {
             //single result
             if result.count == 1 {
                 
-            let textToShare = result.first!.title
-            if let url = result.first!.url {
-                if let adURL = NSURL(string: url) {
-                    let objectsToShare = [textToShare!,adURL]
-                    
-                    let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-                    activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-                    
-                    // exclude some activity types from the list (optional)
-                    activityViewController.excludedActivityTypes = [ UIActivityTypeAirDrop, UIActivityTypePostToFacebook ]
-                    
-                    // present the view controller
-                    self.presentViewController(activityViewController, animated: true, completion: nil)
+                let textToShare = result.first!.title
+                if let url = result.first!.url {
+                    if let adURL = NSURL(string: url) {
+                        let objectsToShare = [textToShare!,adURL]
+                        
+                        let activityViewController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+                        
+                        // exclude some activity types from the list (optional)
+                        activityViewController.excludedActivityTypes = [ UIActivityTypeAirDrop, UIActivityTypePostToFacebook ]
+                        
+                        // present the view controller
+                        self.presentViewController(activityViewController, animated: true, completion: nil)
+                    }
                 }
-            }
             }
         }
     }
