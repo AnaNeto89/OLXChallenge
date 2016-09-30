@@ -3,13 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ad Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AdTableViewController" customModule="OLXChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -62,7 +61,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="MXq-jZ-rVu" kind="presentation" identifier="SegueFromPagerToMap" id="B3j-JT-Wwz"/>
+                        <segue destination="MXq-jZ-rVu" kind="show" identifier="SegueFromPagerToMap" id="B3j-JT-Wwz"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tx7-E1-eLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,26 +80,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-bO-P0P">
-                                <rect key="frame" x="514" y="35" width="44" height="44"/>
-                                <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="0.30188978040540543" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="zmb-bO-P0P" secondAttribute="height" multiplier="1:1" id="nnV-YT-f2O"/>
-                                    <constraint firstAttribute="width" constant="44" id="xmg-Pc-JAj"/>
-                                </constraints>
-                                <state key="normal" image="ic_cross_white.png"/>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kjw-Id-Sjf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sDI-Sz-Vuv" firstAttribute="top" secondItem="kjw-Id-Sjf" secondAttribute="bottom" id="4a0-RM-KuR"/>
                             <constraint firstItem="kjw-Id-Sjf" firstAttribute="leading" secondItem="8N1-GN-rzH" secondAttribute="leading" id="Ble-y7-Hk3"/>
-                            <constraint firstAttribute="trailing" secondItem="zmb-bO-P0P" secondAttribute="trailing" constant="42" id="CqH-Dx-tNp"/>
-                            <constraint firstItem="zmb-bO-P0P" firstAttribute="top" secondItem="8GV-yG-4jg" secondAttribute="bottom" constant="15" id="Kfs-GD-UsW"/>
-                            <constraint firstItem="kjw-Id-Sjf" firstAttribute="top" secondItem="8GV-yG-4jg" secondAttribute="bottom" constant="-20" id="LAx-0i-0Qs"/>
+                            <constraint firstItem="kjw-Id-Sjf" firstAttribute="top" secondItem="8GV-yG-4jg" secondAttribute="bottom" id="LAx-0i-0Qs"/>
                             <constraint firstAttribute="trailing" secondItem="kjw-Id-Sjf" secondAttribute="trailing" id="NJG-sK-P8E"/>
                         </constraints>
                     </view>
@@ -170,7 +158,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_cross_white.png" width="13" height="13"/>
         <image name="maps" width="40" height="40"/>
     </resources>
 </document>

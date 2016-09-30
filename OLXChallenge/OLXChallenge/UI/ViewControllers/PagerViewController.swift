@@ -9,27 +9,34 @@
 import UIKit
 import RealmSwift
 
+public protocol PagerViewControllerProtocol {
+    func continueWithCurrentData(data:List<Ad>, page:Int, nextURL:String)
+}
+
 class PagerViewController: UIPageViewController {
 
+    //MARK: Variables
     var ads:List<Ad>?
     var currentIndex:Int?
+    var page:Int = 0
+    var nextPageURL:String?
+    var comebackDelegate:PagerViewControllerProtocol?
+    private var olxManager:OLXManager = OLXManager.sharedInstance
+    
+    //MARK: lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        runConfigurations()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.dataSource = self
         
-        
-        let startVC = self.viewControllerAtIndex(currentIndex!, ad: self.ads![currentIndex!])
-        let viewControllers = [startVC]
-        self.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
-    
     }
     
     override func viewWillDisappear(animated: Bool) {
+        self.comebackDelegate?.continueWithCurrentData(self.ads!, page: self.page, nextURL: self.nextPageURL!)
         super.viewDidDisappear(animated)
     }
 
@@ -37,11 +44,22 @@ class PagerViewController: UIPageViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: auxiliar methods
+    func runConfigurations(){
+        self.dataSource = self
+        let startVC = self.viewControllerAtIndex(currentIndex!, ad: self.ads![currentIndex!])
+        let viewControllers = [startVC]
+        self.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+        self.olxManager.delegate = self
+    }
 
     func viewControllerAtIndex(index:Int, ad:Ad)-> DetailViewController {
         if self.ads!.count == 0 || index >= self.ads!.count {
             return DetailViewController()
         }
+        
+        self.title = "Ad "+self.ads![index].adId!
         
         let vc:DetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
         vc.ad = ad
@@ -55,7 +73,12 @@ class PagerViewController: UIPageViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SegueFromPagerToMap" {
-            let vc = segue.destinationViewController
+            let vc:MapViewController = segue.destinationViewController as! MapViewController
+            let ad = self.ads![self.currentIndex!]
+            vc.adLatitude = Double(ad.latitude!)
+            vc.adLongitude = Double(ad.longitude!)
+            vc.adTitle = ad.title
+            
         }
     }
 }
@@ -70,6 +93,7 @@ extension PagerViewController:UIPageViewControllerDataSource {
             return nil
         }
         
+        self.currentIndex = index
         index -= 1
         return self.viewControllerAtIndex(index, ad: self.ads![index])
     }
@@ -82,7 +106,12 @@ extension PagerViewController:UIPageViewControllerDataSource {
             return nil
         }
         
+        self.currentIndex = index
         index += 1
+        
+        if index  == self.ads!.count-2 {
+            self.olxManager.getData(nextPageURL, page:self.page)
+        }
         
         if index == self.ads!.count {
             return nil
@@ -98,4 +127,28 @@ extension PagerViewController:UIPageViewControllerDataSource {
 
 extension PagerViewController:UIPageViewControllerDelegate {
     
+}
+
+extension PagerViewController:OLXManagerProtocol {
+    
+    func returnResponse(response: Response) {
+        
+        if self.ads == nil {
+            self.ads = List<Ad>()
+        }
+        self.ads!.appendContentsOf(response.ads)
+        self.page = response.page
+        self.nextPageURL = response.nextPageURL
+        
+        self.viewControllerAtIndex(self.currentIndex!, ad: self.ads![self.currentIndex!])
+    }
+    
+    func returnError() {
+        let myAlert = UIAlertView()
+        myAlert.title = NSLocalizedString("ERROR_TITLE", comment: "")
+        myAlert.message = NSLocalizedString("ERROR_MSG", comment: "")
+        myAlert.addButtonWithTitle("OK")
+        myAlert.delegate = self
+        myAlert.show()
+    }
 }

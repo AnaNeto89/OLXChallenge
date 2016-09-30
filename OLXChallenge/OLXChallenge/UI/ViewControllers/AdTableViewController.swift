@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import SDWebImage
 
-class ViewController: UIViewController {
+class AdTableViewController: UIViewController {
     
     private var olxManager:OLXManager = OLXManager.sharedInstance
     private var isLoadingTableView = true
@@ -63,12 +63,15 @@ class ViewController: UIViewController {
         if segue.identifier == "SegueFromTableToPager" {
             let vc:PagerViewController = segue.destinationViewController as! PagerViewController
             vc.currentIndex = self.selectedId
+            vc.comebackDelegate = self
             vc.ads = self.data
+            vc.nextPageURL = self.nextPageURL
+            vc.page = page
         }
     }
 }
 
-extension ViewController:OLXManagerProtocol {
+extension AdTableViewController:OLXManagerProtocol {
     
     func returnResponse(response: Response) {
         
@@ -96,7 +99,15 @@ extension ViewController:OLXManagerProtocol {
     }
 }
 
-extension ViewController:UITableViewDelegate {
+extension AdTableViewController:PagerViewControllerProtocol {
+    func continueWithCurrentData(data: List<Ad>, page: Int, nextURL: String) {
+        self.data = data
+        self.page = page
+        self.nextPageURL = nextURL
+    }
+}
+
+extension AdTableViewController:UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:MainTableViewCell = tableView.dequeueReusableCellWithIdentifier("MainTableViewCell", forIndexPath: indexPath) as! MainTableViewCell
@@ -142,7 +153,7 @@ extension ViewController:UITableViewDelegate {
     }
 }
 
-extension ViewController:UITableViewDataSource {
+extension AdTableViewController:UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -153,7 +164,7 @@ extension ViewController:UITableViewDataSource {
     }
 }
 
-extension ViewController:MainTableViewCellProtocol {
+extension AdTableViewController:MainTableViewCellProtocol {
     
     func shareButtonPressed(id: String?) {
         if let str = id {
