@@ -105,6 +105,7 @@ public class DetailViewController: UIViewController {
         self.tableView.registerNib(UINib(nibName: "AdDescriptionTableViewCell", bundle:nil), forCellReuseIdentifier: "AdDescriptionTableViewCell")
         self.tableView.registerNib(UINib(nibName: "AdPriceTableViewCell", bundle:nil), forCellReuseIdentifier: "AdPriceTableViewCell")
         self.tableView.registerNib(UINib(nibName: "AdVendorTableViewCell", bundle:nil), forCellReuseIdentifier: "AdVendorTableViewCell")
+        self.tableView.registerNib(UINib(nibName: "AdCreationTableViewCell", bundle:nil), forCellReuseIdentifier: "AdCreationTableViewCell")
     }
 }
 
@@ -117,7 +118,7 @@ extension DetailViewController:UITableViewDelegate {
     }
     
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5
+        return 6
     }
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -158,6 +159,14 @@ extension DetailViewController:UITableViewDataSource {
             
             return cell
         case 2:
+            let cell:AdCreationTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdCreationTableViewCell", forIndexPath: indexPath) as! AdCreationTableViewCell
+            cell.creationLabel.text =  self.ad?.creationDate
+            
+            cell.userInteractionEnabled = false
+            cell.contentView.layoutIfNeeded()
+            
+            return cell
+        case 3:
             let cell:AdVendorTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdVendorTableViewCell", forIndexPath: indexPath) as! AdVendorTableViewCell
             cell.vendorNameLabel.text =  self.ad?.vendorName
             
@@ -165,7 +174,7 @@ extension DetailViewController:UITableViewDataSource {
             cell.contentView.layoutIfNeeded()
             
             return cell
-        case 3:
+        case 4:
             let cell:AdLocationTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdLocationTableViewCell", forIndexPath: indexPath) as! AdLocationTableViewCell
             cell.locationLabel.text =  self.ad?.locationText
             
@@ -173,7 +182,7 @@ extension DetailViewController:UITableViewDataSource {
             cell.contentView.layoutIfNeeded()
             
             return cell
-        case 4:
+        case 5:
             let cell:AdDescriptionTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdDescriptionTableViewCell", forIndexPath: indexPath) as! AdDescriptionTableViewCell
             cell.descriptionLabel.text =  self.ad?.descriptionText
             
@@ -209,10 +218,12 @@ extension DetailViewController:UITableViewDataSource {
         case 1:
             label.text = NSLocalizedString("SECTION_PRICE_TITLE", comment: "")
         case 2:
-            label.text = NSLocalizedString("SECTION_VENDOR_TITLE", comment: "")
+            label.text = NSLocalizedString("SECTION_CREATEDATE_TITLE", comment: "")
         case 3:
-            label.text = NSLocalizedString("SECTION_LOCATION_TITLE", comment: "")
+            label.text = NSLocalizedString("SECTION_VENDOR_TITLE", comment: "")
         case 4:
+            label.text = NSLocalizedString("SECTION_LOCATION_TITLE", comment: "")
+        case 5:
             label.text = NSLocalizedString("SECTION_DESCRIPTION_TITLE", comment: "")
         default:
             label.text = ""

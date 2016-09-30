@@ -28,6 +28,8 @@
 		A1E50E051D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E50E031D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift */; };
 		A1E50E061D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E50E041D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib */; };
 		A1E50E151D9EA58E0054CDD1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E50E141D9EA58E0054CDD1 /* CoreLocation.framework */; };
+		A1E50E1A1D9ECD780054CDD1 /* AdCreationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E50E181D9ECD780054CDD1 /* AdCreationTableViewCell.swift */; };
+		A1E50E1B1D9ECD780054CDD1 /* AdCreationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E50E191D9ECD780054CDD1 /* AdCreationTableViewCell.xib */; };
 		A1F411821D9D0FC900ABEAD2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */; };
 		A1F411881D9D280500ABEAD2 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F411871D9D280500ABEAD2 /* UINavigationBar+Awesome.m */; };
 		A1F4118A1D9D612900ABEAD2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1F411891D9D612900ABEAD2 /* Localizable.strings */; };
@@ -69,6 +71,8 @@
 		A1E50E031D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdVendorTableViewCell.swift; sourceTree = "<group>"; };
 		A1E50E041D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdVendorTableViewCell.xib; sourceTree = "<group>"; };
 		A1E50E141D9EA58E0054CDD1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A1E50E181D9ECD780054CDD1 /* AdCreationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdCreationTableViewCell.swift; sourceTree = "<group>"; };
+		A1E50E191D9ECD780054CDD1 /* AdCreationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdCreationTableViewCell.xib; sourceTree = "<group>"; };
 		A1F411811D9D0FC900ABEAD2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A1F411851D9D280400ABEAD2 /* OLXChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "OLXChallenge-Bridging-Header.h"; path = "Libs/LTNavigationAwesome/OLXChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1F411861D9D280500ABEAD2 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				A1E50DFC1D9E5F650054CDD1 /* AdPriceTableViewCell.xib */,
 				A1E50E031D9E7CDA0054CDD1 /* AdVendorTableViewCell.swift */,
 				A1E50E041D9E7CDA0054CDD1 /* AdVendorTableViewCell.xib */,
+				A1E50E181D9ECD780054CDD1 /* AdCreationTableViewCell.swift */,
+				A1E50E191D9ECD780054CDD1 /* AdCreationTableViewCell.xib */,
 			);
 			name = AdDetail;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				A1AD321F1D9DB90B00068835 /* AdLocationTableViewCell.xib in Resources */,
 				A1F849361D9C28E80026A8F8 /* Main.storyboard in Resources */,
 				A1AD32161D9DB72700068835 /* MainTableViewCell.xib in Resources */,
+				A1E50E1B1D9ECD780054CDD1 /* AdCreationTableViewCell.xib in Resources */,
 				A1AD32131D9DAC8B00068835 /* DetailHeaderView.xib in Resources */,
 				A1AD321A1D9DB8B700068835 /* AdTitleTableViewCell.xib in Resources */,
 			);
@@ -422,6 +429,7 @@
 				A1F8492F1D9C0DBD0026A8F8 /* Response.swift in Sources */,
 				A125B4691D9AC9F700C57740 /* OLXAPIRepository.swift in Sources */,
 				A1AD32111D9DAC6400068835 /* DetailHeaderView.swift in Sources */,
+				A1E50E1A1D9ECD780054CDD1 /* AdCreationTableViewCell.swift in Sources */,
 				A1AD321E1D9DB90B00068835 /* AdLocationTableViewCell.swift in Sources */,
 				A1AD32241D9DBE2C00068835 /* AdDescriptionTableViewCell.swift in Sources */,
 				A1F849271D9BF31A0026A8F8 /* Ad.swift in Sources */,
