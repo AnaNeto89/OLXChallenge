@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  OLXChallenge
+
+  Created by Ana Neto on 29/09/16.
+  Copyright © 2016 Ana Neto. All rights reserved.
+*/
+"ERROR_TITLE" = "No Connection";
+"ERROR_MSG" = "An Error ocurred when trying to get new ads. Please, check your internet connection.";
+
+"SECTION_PRODUCT_TITLE" = "PRODUTO";
+"SECTION_PRICE_TITLE" = "PREÇO";
+"SECTION_VENDOR_TITLE" = "VENDEDOR";
+"SECTION_LOCATION_TITLE" = "LOCALIZAÇÃO";
+"SECTION_DESCRIPTION_TITLE" = "DESCRIÇÃO";
+"SECTION_CREATEDATE_TITLE" = "CRIADO";
+"ADS_LIST_TITLE" = "Anúncios";
+"MAPS" = "Mapa";

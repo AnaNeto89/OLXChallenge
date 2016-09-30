@@ -142,6 +142,8 @@ extension PagerViewController:DetailViewControllerProtocol {
     }
 }
 
+//MARK: OLXManagerProtocol methods
+
 extension PagerViewController:OLXManagerProtocol {
     
     func returnResponse(response: Response) {
