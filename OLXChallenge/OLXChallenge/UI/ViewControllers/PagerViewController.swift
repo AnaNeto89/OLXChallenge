@@ -51,6 +51,16 @@ class PagerViewController: UIPageViewController {
         vc.pageIndex = index
         return vc
     }
+    
+    @IBAction func mapsButtonPressed(sender: AnyObject) {
+        self.performSegueWithIdentifier("SegueFromPagerToMap", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SegueFromPagerToMap" {
+            let vc = segue.destinationViewController
+        }
+    }
 }
 
 extension PagerViewController:UIPageViewControllerDataSource {

@@ -42,7 +42,10 @@ public class DetailViewController: UIViewController {
         self.tableView.registerNib(UINib(nibName: "AdTitleTableViewCell", bundle:nil), forCellReuseIdentifier: "AdTitleTableViewCell")
         self.tableView.registerNib(UINib(nibName: "AdLocationTableViewCell", bundle:nil), forCellReuseIdentifier: "AdLocationTableViewCell")
         self.tableView.registerNib(UINib(nibName: "AdDescriptionTableViewCell", bundle:nil), forCellReuseIdentifier: "AdDescriptionTableViewCell")
+        self.tableView.registerNib(UINib(nibName: "AdPriceTableViewCell", bundle:nil), forCellReuseIdentifier: "AdPriceTableViewCell")
         
+        
+        self.title = self.ad?.adId
     }
     
     override public func viewWillDisappear(animated: Bool) {
@@ -69,11 +72,11 @@ extension DetailViewController:UITableViewDelegate {
     }
     
     public func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5
+        return 2
     }
     
     public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 5 : 0
+        return section == 0 ? 2 : 0
     }
 }
 
@@ -85,20 +88,32 @@ extension DetailViewController:UITableViewDataSource {
             let cell:AdTitleTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdTitleTableViewCell", forIndexPath: indexPath) as! AdTitleTableViewCell
             cell.titleLabel.text =  self.ad?.title
             
+            cell.userInteractionEnabled = false
             cell.contentView.layoutIfNeeded()
             
             return cell
-        case 1:
-            let cell:AdLocationTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdLocationTableViewCell", forIndexPath: indexPath) as! AdLocationTableViewCell
-            cell.locationLabel.text =  self.ad?.locationText
             
+        case 1:
+            let cell:AdPriceTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdPriceTableViewCell", forIndexPath: indexPath) as! AdPriceTableViewCell
+            cell.priceLabel.text =  self.ad?.price
+            
+            cell.userInteractionEnabled = false
             cell.contentView.layoutIfNeeded()
             
             return cell
         case 2:
+            let cell:AdLocationTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdLocationTableViewCell", forIndexPath: indexPath) as! AdLocationTableViewCell
+            cell.locationLabel.text =  self.ad?.locationText
+            
+            cell.userInteractionEnabled = false
+            cell.contentView.layoutIfNeeded()
+            
+            return cell
+        case 3:
             let cell:AdDescriptionTableViewCell = tableView.dequeueReusableCellWithIdentifier("AdDescriptionTableViewCell", forIndexPath: indexPath) as! AdDescriptionTableViewCell
             cell.descriptionLabel.text =  self.ad?.descriptionText
             
+            cell.userInteractionEnabled = false
             cell.contentView.layoutIfNeeded()
             
             return cell
