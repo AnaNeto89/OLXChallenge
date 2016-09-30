@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,20 +11,21 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rjD-Ih-dhP">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-QU-HwB" customClass="ImageSlideshow" customModule="ImageSlideshow">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                </imageView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="rjD-Ih-dhP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S5u-QZ-xUu"/>
-                <constraint firstAttribute="trailing" secondItem="rjD-Ih-dhP" secondAttribute="trailing" id="V6i-5g-G23"/>
-                <constraint firstAttribute="bottom" secondItem="rjD-Ih-dhP" secondAttribute="bottom" id="oDb-wl-FNy"/>
-                <constraint firstItem="rjD-Ih-dhP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uxT-d7-aPe"/>
+                <constraint firstItem="W7B-QU-HwB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JZc-Xp-sHW"/>
+                <constraint firstItem="W7B-QU-HwB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Kf4-is-w83"/>
+                <constraint firstAttribute="trailing" secondItem="W7B-QU-HwB" secondAttribute="trailing" id="lhS-Wz-jdu"/>
+                <constraint firstAttribute="bottom" secondItem="W7B-QU-HwB" secondAttribute="bottom" id="v5N-SK-ZOw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="imageView" destination="rjD-Ih-dhP" id="Gh8-Lb-cBj"/>
+                <outlet property="imageView" destination="W7B-QU-HwB" id="CBR-kI-etF"/>
             </connections>
         </view>
     </objects>

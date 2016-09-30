@@ -9,12 +9,15 @@
 import UIKit
 import RealmSwift
 import MXParallaxHeader
+import ImageSlideshow
 
 public class DetailViewController: UIViewController {
     
     //MARK: Variables
     var ad:Ad?
     var pageIndex:Int?
+    var slideshowTransitioningDelegate: ZoomAnimatedTransitioningDelegate?
+    var header:DetailHeaderView?
     
     //MARK: IBOutlets
     @IBOutlet var tableView: UITableView!
@@ -48,13 +51,47 @@ public class DetailViewController: UIViewController {
     
     func buildHeader(){
         if let photo = ad?.getImageURL(0) {
-            let headerView = NSBundle.mainBundle().loadNibNamed("DetailHeaderView", owner: self, options: nil).first as? DetailHeaderView
-            headerView?.imageView.sd_setImageWithURL(NSURL(string: photo))
-            self.tableView.parallaxHeader.view = headerView  // You can set the parallax header view from the floating view
+            self.header = NSBundle.mainBundle().loadNibNamed("DetailHeaderView", owner: self, options: nil).first as? DetailHeaderView
+            
+            self.header!.imageView.backgroundColor = UIColor.whiteColor()
+            self.header!.imageView.slideshowInterval = 5.0
+            self.header!.imageView.pageControlPosition = PageControlPosition.UnderScrollView
+            self.header!.imageView.pageControl.currentPageIndicatorTintColor = UIColor.lightGrayColor();
+            self.header!.imageView.pageControl.pageIndicatorTintColor = UIColor.blackColor();
+            self.header!.imageView.contentScaleMode = UIViewContentMode.ScaleAspectFill
+            
+            var sources:[SDWebImageSource] = [SDWebImageSource]()
+            
+            for i in 0...ad!.photos.count-1 {
+                sources.append(SDWebImageSource(urlString: ad!.getImageURL(i)!)!)
+            }
+            
+            self.header!.imageView.setImageInputs(sources)
+            
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(DetailViewController.click))
+            self.header!.imageView.addGestureRecognizer(recognizer)
+            
+//            headerView?.imageView.sd_setImageWithURL(NSURL(string: photo))
+            self.tableView.parallaxHeader.view = self.header  // You can set the parallax header view from the floating view
             tableView.parallaxHeader.height = self.view.frame.height/3
             tableView.parallaxHeader.mode = MXParallaxHeaderMode.Fill
             tableView.parallaxHeader.minimumHeight = 0
         }
+    }
+    
+    func click() {
+        let ctr = FullScreenSlideshowViewController()
+        ctr.pageSelected = {(page: Int) in
+            self.header?.imageView.setScrollViewPage(page, animated: false)
+        }
+        
+        ctr.initialImageIndex = self.header!.imageView.scrollViewPage
+        ctr.inputs = self.header?.imageView.images
+        slideshowTransitioningDelegate = ZoomAnimatedTransitioningDelegate(slideshowView: self.header!.imageView, slideshowController: ctr)
+        // Uncomment if you want disable the slide-to-dismiss feature on full screen preview
+        // self.transitionDelegate?.slideToDismissEnabled = false
+        ctr.transitioningDelegate = slideshowTransitioningDelegate
+        self.presentViewController(ctr, animated: true, completion: nil)
     }
     
     func tableViewConfigurations(){

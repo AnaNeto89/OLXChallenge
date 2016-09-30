@@ -8,10 +8,11 @@
 
 import UIKit
 import MXParallaxHeader
+import ImageSlideshow
 
 class DetailHeaderView: UIView, MXParallaxHeaderProtocol {
     
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var imageView: ImageSlideshow!
     
     class func instanciateFromNib() -> DetailHeaderView {
         return NSBundle.mainBundle().loadNibNamed("DetailHeaderView", owner: nil, options: nil)[0] as! DetailHeaderView

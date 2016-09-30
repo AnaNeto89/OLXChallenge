@@ -71,12 +71,10 @@ public class Ad: Object {
         newAd.vendorName = data["user_label"].string
         
         if let photosData:JSON = data["photos"] {
-            
             if let key = photosData["riak_key"].int {
-                
-                if let innerData = photosData["data"].array {
-                    for photo in innerData {
-                        let newPhoto = Photo.parseFromJSON(key, data: photo)
+                if let innerData:[JSON] = photosData["data"].arrayValue {
+                    for data in innerData {
+                        let newPhoto = Photo.parseFromJSON(key, data: data)
                         newAd.photos.append(newPhoto)
                     }
                 }

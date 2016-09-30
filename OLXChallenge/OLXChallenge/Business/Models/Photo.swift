@@ -12,13 +12,14 @@ import SwiftyJSON
 
 public class Photo: Object {
     
+    dynamic var photoId:String = ""
     dynamic var key:Int  = 0
     dynamic var slot:Int = 0
     dynamic var width: Int = 0
     dynamic var height: Int = 0
 
     override public static func primaryKey() -> String? {
-        return "key"
+        return "photoId"
     }
     
     static func parseFromJSON(key:Int, data:JSON)->Photo {
@@ -30,6 +31,8 @@ public class Photo: Object {
         if let slot = data["slot_id"].int {
             photo.slot = slot
         }
+        
+        photo.photoId = String(photo.key)+"_"+String(photo.slot)
         
         if let w = data["w"].int {
             photo.width = w
